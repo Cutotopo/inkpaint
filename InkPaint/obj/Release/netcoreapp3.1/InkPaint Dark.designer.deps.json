@@ -1,0 +1,80 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ControlzEx/4.3.2": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ControlzEx.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.3.2.7"
+          }
+        }
+      },
+      "Fluent.Ribbon/8.0.1": {
+        "dependencies": {
+          "ControlzEx": "4.3.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Fluent.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1.0"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.19.35512"
+          }
+        }
+      },
+      "System.Text.Json/4.7.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {
+            "assemblyVersion": "4.0.1.2",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ControlzEx/4.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rivud1nUitXSu3GxzhKXu8gsXFqnrPOxrmVpOYejuNCe5Bm/BKevzZpJbH9hvwAx0pH9hGrqqSODa3j2Y9J/bQ==",
+      "path": "controlzex/4.3.2",
+      "hashPath": "controlzex.4.3.2.nupkg.sha512"
+    },
+    "Fluent.Ribbon/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r7G06mlHoJJHm80Tt3LLabGuoQl84+sjCxrfaL8yLUncK6OKRTvpegjtipufoWFEfuJ8HkxR8c72gjP3M7G0TQ==",
+      "path": "fluent.ribbon/8.0.1",
+      "hashPath": "fluent.ribbon.8.0.1.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5sPWkbqImc2t1aQwIfJcKsUo7tOg1Tr8+6xVzZJB56Nzt4u9NlpcLofgdX/aRYpPKdWDA3U23Akw1KQzU5e82g==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.19",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512"
+    },
+    "System.Text.Json/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "path": "system.text.json/4.7.2",
+      "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,132 @@
+﻿<Fluent:RibbonWindow x:Class="InkPaint.InkPaintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:local="clr-namespace:InkPaint"
+        xmlns:Fluent="urn:fluent-ribbon"
+        mc:Ignorable="d"
+        Title="InkPaint Beta 0.0.0.1 [francyink compatibility mode]" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="White">
+            <Image VerticalAlignment="Top" x:Name="Quadretti" HorizontalAlignment="Left" Width="1920" Height="1080" Source="./squares1920.png" Visibility="Hidden" />
+        <Image VerticalAlignment="Top" x:Name="Righe" HorizontalAlignment="Left" Width="1920" Height="1080" Source="./rows1920.png" Visibility="Hidden" />
+            <Image x:Name="Sfondo" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1920" Height="1080" />
+            <InkCanvas x:Name="InkPanel" Background="Transparent" VerticalAlignment="Top" Height="1080" HorizontalAlignment="Left" Width="1920" />
+        </Grid>
+
+        <Fluent:Ribbon Grid.Row="0" x:FieldModifier="public" x:Name="FRibbon" >
+            <!--Backstage-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="Informazioni sul file">
+                            <WrapPanel Orientation="Vertical">
+                                <WrapPanel Orientation="Horizontal">
+                                    <Label Foreground="White" Content="Tipo di file:" FontStyle="Italic" />
+                                    <Label Foreground="White" Content="File di FrancyInk (*.fink)" />
+                                </WrapPanel>
+                            </WrapPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:SeparatorTabItem />
+                        <Fluent:Button Header="Nuova tavola" Click="DeleteCanvas" />
+                        <Fluent:Button Header="Apri" Click="OpenCanvas" />
+                        <Fluent:Button Header="Salva" Click="Salva" />
+                        <Fluent:BackstageTabItem Header="Salva con nome" Tag="InkPaint.Views.Blank2Page">
+                            <Fluent:Button Header="Sfoglia" Click="Salva" />
+                        </Fluent:BackstageTabItem>
+                        <Fluent:BackstageTabItem Header="Evidenziatore">
+                            <WrapPanel Orientation="Vertical">
+                                <Fluent:Button Header="Attiva evidenziatore" Click="Evidenzia" />
+                            </WrapPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:SeparatorTabItem />
+                        <Fluent:BackstageTabItem Header="Input">
+                            <WrapPanel Orientation="Vertical">
+                                <Fluent:Button Header="Entrambi" IsEnabled="False" Foreground="Black" />
+                                <Fluent:Button Header="Solo mouse" Foreground="Black" />
+                                <Fluent:Button Header="Solo penna" IsEnabled="False" Foreground="Black" />
+                            </WrapPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:SeparatorTabItem />
+                        <Fluent:BackstageTabItem Header="Sfondo">
+                            <WrapPanel Orientation="Vertical">
+                                <Fluent:Button Header="Carica immagine" Click="CaricaSfondo" Foreground="Black" />
+                                <Fluent:Button Header="Rimuovi immagine" Click="RimuoviSfondo" Foreground="Black" />
+                            </WrapPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:SeparatorTabItem />
+                        <Fluent:BackstageTabItem Header="Stampa">
+                            <Label Foreground="White" Content="Non implementata." />
+                        </Fluent:BackstageTabItem>
+                        <Fluent:SeparatorTabItem />
+                        <Fluent:Button Header="Chiudi" Click="AppShutdown"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+
+            <!--Tabs-->
+            <Fluent:RibbonTabItem Header="Penna">
+                <Fluent:RibbonGroupBox Header="Spessore del tratto">
+                    <Fluent:ComboBox Width="150" >
+                        <ComboBoxItem Content="1,0" IsSelected="False" Selected="Thickness10" />
+                        <ComboBoxItem Content="1,5 (predefinito)" x:Name="Thickness15Item" IsSelected="False" Selected="Thickness15" />
+                        <ComboBoxItem Content="2,0" IsSelected="False" Selected="Thickness20" />
+                        <ComboBoxItem Content="2,5" IsSelected="False" Selected="Thickness25" />
+                        <ComboBoxItem Content="3,0" IsSelected="False" Selected="Thickness30" />
+                        <ComboBoxItem Content="3,5" IsSelected="False" Selected="Thickness35" />
+                        <ComboBoxItem Content="4,0" IsSelected="False" Selected="Thickness40" />
+                        <ComboBoxItem Content="4,5" IsSelected="False" Selected="Thickness45" />
+                        <ComboBoxItem Content="5,0" IsSelected="False" Selected="Thickness50" />
+                        <ComboBoxItem Content="5,5" IsSelected="False" Selected="Thickness55" />
+                        <ComboBoxItem Content="6,0" IsSelected="False" Selected="Thickness60" />
+                        <ComboBoxItem Content="6,5" IsSelected="False" Selected="Thickness65" />
+                    </Fluent:ComboBox>
+                    <Fluent:Button Click="Thickness15D" Header="Ripristina" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Colore del tratto">
+                    <Fluent:Button Background="Black" Click="ColoreNero" />
+                    <Fluent:Button Background="Blue" Click="ColoreBlu" />
+                    <Fluent:Button Background="Red" Click="ColoreRosso" />
+                    <Fluent:Button Background="Yellow" Click="ColoreGiallo" />
+                    <Fluent:Button Background="Green" Click="ColoreVerde" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Strumenti">
+                <Fluent:RibbonGroupBox Header="Penna">
+                    <Fluent:Button Header="Gomma" Click="Gomma" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Colore">
+                    <Fluent:CheckBox Header="Evidenziatore" Checked="Evidenzia" Unchecked="NoEvidenzia" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Visualizzazione">
+                <Fluent:RibbonGroupBox Header="Zoom">
+                    <Fluent:Button Header="Aumenta" Click="ZoomIn" />
+                    <Fluent:Button Header="Riduci" Click="ZoomOut" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="Guide">
+                    <Fluent:ComboBox Width="150">
+                        <ComboBoxItem Content="Nessuna guida" Selected="NoGuide" IsSelected="True" />
+                        <ComboBoxItem Content="Quadretti" Selected="MostraQuadretti" />
+                        <ComboBoxItem Content="Righe" Selected="MostraRighe" />
+                    </Fluent:ComboBox>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Sfondo">
+                <Fluent:RibbonGroupBox Header="Gestione file">
+                    <Fluent:Button Header="Carica immagine" Click="CaricaSfondo" />
+                    <Fluent:Button Header="Rimuovi immagine" Click="RimuoviSfondo" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+        <StackPanel Orientation="Horizontal" Height="20" VerticalAlignment="Bottom" Background="Gray">
+            <TextBox Background="Transparent" TextAlignment="Center" x:Name="LatestEvent" Width="256" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Foreground="White" IsEnabled="False" />
+            <TextBox Background="Transparent" TextAlignment="Center" x:Name="LatestEventTime" Width="256" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Foreground="White" IsEnabled="False" />
+            <Button Background="Transparent" Content="Nessuna immagine caricata." x:Name="BackgroundPath" Width="256" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Foreground="Black" IsEnabled="False" />
+        </StackPanel>
+    </Grid>
+</Fluent:RibbonWindow>
