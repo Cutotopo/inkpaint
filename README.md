@@ -10,7 +10,7 @@ Currently, this application supports:
  - Deleting strokes
  - View-only mode
  - Clearing the canvas
- - Saving the canvas
+ - Saving the canvas (*.fink* files)
  - Loading the canvas from a file
  - Loading custom backgrounds
  - Using squares or rows as a background
