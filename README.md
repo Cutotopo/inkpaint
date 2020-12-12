@@ -18,6 +18,9 @@ Currently, this application supports:
  - Zoom
  - Full Screen (broken)
  
- This application uses:
+This application uses:
  - Fluent.Ribbon: https://github.com/fluentribbon/Fluent.Ribbon
  - DiscordRPC (wip)
+
+Italian version:
+ - https://github.com/Cutotopo/inkpaint-it
