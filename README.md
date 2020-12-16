@@ -1,5 +1,6 @@
 # inkpaint
-InkPaint - by Cutotopo
+InkPaint
+by Cutotopo
 
 A simple WPF C# Paint-like application
 
