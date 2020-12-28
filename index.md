@@ -4,6 +4,8 @@ Welcome to InkPaint! You can download the latest version from [here](https://git
 
 
 
-### Test
+## Download
+Download InkPaint from GitHub!
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+EN - [download](https://github.com/Cutotopo/inkpaint/releases/)
+IT - [download](https://github.com/Cutotopo/inkpaint-it/releases/)
