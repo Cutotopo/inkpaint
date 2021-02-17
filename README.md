@@ -21,7 +21,7 @@ Currently, this application supports:
  
 This application uses:
  - Fluent.Ribbon: https://github.com/fluentribbon/Fluent.Ribbon
- - DiscordRPC (wip)
+ - DiscordRPC (WIP)
 
 ## Italian version
  - https://github.com/Cutotopo/inkpaint-it
